@@ -3,7 +3,7 @@ class Game {
   description: string
   image: string
   infos: string[]
-  system: string
+  system: string[]
   title: string
   id: number
 
@@ -13,7 +13,7 @@ class Game {
     description: string,
     image: string,
     infos: string[],
-    system: string,
+    system: string[],
     title: string
   ) {
     this.id = id

@@ -1,104 +1,76 @@
 import Banner from '../../components/Banner'
 import ProductsList from '../../components/ProductList/Index'
 import Game from '../../models/Game'
-import resident from '../../assets/images/resident.png'
-import diablo from '../../assets/images/diablo.png'
-import zelda from '../../assets/images/zelda.png'
-import star_wars from '../../assets/images/star_wars.png'
-
-// Promoções
+import sushi from '../../assets/images/sushi.png'
+import italiana from '../../assets/images/italiana.png'
+import estrela from '../../assets/images/estrela.png'
 
 const promocoes: Game[] = [
   {
     id: 1,
-    category: 'Ação',
+    category: 'Saiba mais',
     description:
-      'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror de tiro em terceira pessoa desenvolvido e publicado pela Capcom.',
-    image: resident,
-    title: 'Resident Evil 4',
-    infos: ['10%', 'R$ 250,00'],
-    system: 'Windows'
+      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
+    image: sushi,
+    title: 'Hioki Sushi',
+    infos: ['Destaque da semana', 'Japonesa'],
+    system: ['4.9', estrela]
   },
   {
     id: 2,
-    category: 'Ação',
+    category: 'Saiba mais',
     description:
-      'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror de tiro em terceira pessoa desenvolvido e publicado pela Capcom.',
-    image: resident,
-    title: 'Resident Evil 4',
-    infos: ['5%', 'R$ 290,00'],
-    system: 'PS5'
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+    image: italiana,
+    title: 'La Dolce Vita Trattoria',
+    infos: [' ', 'Italiana'],
+    system: ['4.9', estrela]
   },
   {
     id: 3,
-    category: 'Ação',
+    category: 'Saiba mais',
     description:
-      'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror de tiro em terceira pessoa desenvolvido e publicado pela Capcom.',
-    image: resident,
-    title: 'Resident Evil 4',
-    infos: ['10%', 'R$ 220,00'],
-    system: 'PS4'
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+    image: italiana,
+    title: 'La Dolce Vita Trattoria',
+    infos: [' ', 'Italiana'],
+    system: ['4.9', estrela]
   },
   {
     id: 4,
-    category: 'Ação',
+    category: 'Saiba mais',
     description:
-      'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror de tiro em terceira pessoa desenvolvido e publicado pela Capcom.',
-    image: resident,
-    title: 'Resident Evil 4',
-    infos: ['5%', 'R$ 290,00'],
-    system: 'XBox'
-  }
-]
-
-const emBreve: Game[] = [
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+    image: italiana,
+    title: 'La Dolce Vita Trattoria',
+    infos: [' ', 'Italiana'],
+    system: ['4.9', estrela]
+  },
   {
     id: 5,
-    category: 'RPG',
+    category: 'Saiba mais',
     description:
-      'Diablo IV é um jogo eletrônico de RPG de ação desenvolvido pela Blizzard Entertainment.',
-    title: 'Diablo IV',
-    system: 'Windows',
-    infos: ['17/05'],
-    image: diablo
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+    image: italiana,
+    title: 'La Dolce Vita Trattoria',
+    infos: [' ', 'Italiana'],
+    system: ['4.9', estrela]
   },
   {
     id: 6,
-    category: 'RPG',
+    category: 'Saiba mais',
     description:
-      'Zelda é um jogo eletrônico de RPG de ação desenvolvido pela Blizzard Entertainment.',
-    title: 'Zelda',
-    system: 'Windows',
-    infos: ['11/05'],
-    image: zelda
-  },
-  {
-    id: 7,
-    category: 'RPG',
-    description:
-      'Star Wars é um jogo eletrônico de RPG de ação desenvolvido pela Blizzard Entertainment.',
-    title: 'Star Wars',
-    system: 'Windows',
-    infos: ['24/05'],
-    image: star_wars
-  },
-  {
-    id: 8,
-    category: 'RPG',
-    description:
-      'Resident Evil 4 é um jogo eletrônico de RPG de ação desenvolvido pela Blizzard Entertainment.',
-    title: 'Resident Evil 4',
-    system: 'Nintendo Switch',
-    infos: ['17/05'],
-    image: resident
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
+    image: italiana,
+    title: 'La Dolce Vita Trattoria',
+    infos: [' ', 'Italiana'],
+    system: ['4.9', '4.9']
   }
 ]
 
 const Home = () => (
   <>
-    <Banner />
     <ProductsList games={promocoes} title="Promoções" background="gray" />
-    <ProductsList games={emBreve} title="Em breve" background="black" />
   </>
 )
 

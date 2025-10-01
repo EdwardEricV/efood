@@ -2,8 +2,10 @@ import ProductsList from '../../components/ProductList/Index'
 import Game from '../../models/Game'
 import resident from '../../assets/images/resident.png'
 import diablo from '../../assets/images/diablo.png'
+import estrela from '../../assets/images/estrela.png'
 import zelda from '../../assets/images/zelda.png'
 import star_wars from '../../assets/images/star_wars.png'
+import Banner from '../../components/Banner'
 
 // Promoções
 
@@ -16,7 +18,7 @@ const promocoes: Game[] = [
     image: resident,
     title: 'Resident Evil 4',
     infos: ['10%', 'R$ 250,00'],
-    system: 'Windows'
+    system: ['4.9', estrela]
   },
   {
     id: 2,
@@ -26,7 +28,7 @@ const promocoes: Game[] = [
     image: resident,
     title: 'Resident Evil 4',
     infos: ['5%', 'R$ 290,00'],
-    system: 'PS5'
+    system: ['4.9', estrela]
   },
   {
     id: 3,
@@ -36,7 +38,7 @@ const promocoes: Game[] = [
     image: resident,
     title: 'Resident Evil 4',
     infos: ['10%', 'R$ 220,00'],
-    system: 'PS4'
+    system: ['4.9', estrela]
   },
   {
     id: 4,
@@ -46,7 +48,7 @@ const promocoes: Game[] = [
     image: resident,
     title: 'Resident Evil 4',
     infos: ['5%', 'R$ 290,00'],
-    system: 'XBox'
+    system: ['4.9', estrela]
   }
 ]
 
@@ -57,7 +59,7 @@ const emBreve: Game[] = [
     description:
       'Diablo IV é um jogo eletrônico de RPG de ação desenvolvido pela Blizzard Entertainment.',
     title: 'Diablo IV',
-    system: 'Windows',
+    system: ['4.9', estrela],
     infos: ['17/05'],
     image: diablo
   },
@@ -67,7 +69,7 @@ const emBreve: Game[] = [
     description:
       'Zelda é um jogo eletrônico de RPG de ação desenvolvido pela Blizzard Entertainment.',
     title: 'Zelda',
-    system: 'Windows',
+    system: ['4.9', estrela],
     infos: ['11/05'],
     image: zelda
   },
@@ -77,7 +79,7 @@ const emBreve: Game[] = [
     description:
       'Star Wars é um jogo eletrônico de RPG de ação desenvolvido pela Blizzard Entertainment.',
     title: 'Star Wars',
-    system: 'Windows',
+    system: ['4.9', estrela],
     infos: ['24/05'],
     image: star_wars
   },
@@ -87,7 +89,7 @@ const emBreve: Game[] = [
     description:
       'Resident Evil 4 é um jogo eletrônico de RPG de ação desenvolvido pela Blizzard Entertainment.',
     title: 'Resident Evil 4',
-    system: 'Nintendo Switch',
+    system: ['4.9', estrela],
     infos: ['17/05'],
     image: resident
   }
@@ -95,6 +97,7 @@ const emBreve: Game[] = [
 
 const Categories = () => (
   <>
+    <Banner />
     <ProductsList games={promocoes} title="RPG" background="gray" />
     <ProductsList games={emBreve} title="Ação" background="black" />
     <ProductsList games={promocoes} title="Aventura" background="gray" />

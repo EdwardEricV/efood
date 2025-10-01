@@ -5,6 +5,8 @@ export const cores = {
   preta: '#111',
   cinza: '#333',
   cinzaClaro: '#a3a3a3',
+  salmao: '#e66767',
+  salmaoClaro: '#ffebd9',
   verde: '#10ac84'
 }
 
@@ -18,9 +20,8 @@ export const GlobalCss = createGlobalStyle`
   }
 
   body {
-    background-color: ${cores.preta};
-    color: ${cores.branca};
-    padding-top: 40px;
+    background-color: ${cores.branca};
+    color: ${cores.salmao};
   }
 
   .container {

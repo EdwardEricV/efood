@@ -1,34 +1,20 @@
 import { Link } from 'react-router-dom'
-import { HeaderBar, Links, LinkItem, LinkCart } from './styles'
+import { ImagemHeader, Subtitulo, LogoEFOOD } from './styles'
 
 import logo from '../../assets/images/logo.svg'
-import carrinho from '../../assets/images/carrinho.svg'
+import HeaderImg from '../../assets/images/Vector.png'
 
 const Header = () => (
-  <HeaderBar>
-    <div>
+  <>
+    <ImagemHeader style={{ backgroundImage: `url(${HeaderImg})` }}>
       <Link to="/">
-        <img src={logo} alt="EPLAY" />
+        <LogoEFOOD src={logo} alt="EFOOD" />
       </Link>
-      <nav>
-        <Links>
-          <LinkItem>
-            <Link to="/categories">Categorias</Link>
-          </LinkItem>
-          <LinkItem>
-            <a href="#">Novidades</a>
-          </LinkItem>
-          <LinkItem>
-            <a href="#">Promoções</a>
-          </LinkItem>
-        </Links>
-      </nav>
-    </div>
-    <LinkCart href="#">
-      0 - produto(s)
-      <img src={carrinho} alt="Carrinho" />
-    </LinkCart>
-  </HeaderBar>
+      <Subtitulo>
+        Viva experiências gastronômicas no conforto da sua casa
+      </Subtitulo>
+    </ImagemHeader>
+  </>
 )
 
 export default Header
