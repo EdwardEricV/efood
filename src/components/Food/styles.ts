@@ -3,9 +3,8 @@ import { cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 
 export const Card = styled.div`
-  background-color: ${cores.cardFundo};
+  background-color: ${cores.salmao};
   position: relative;
-  margin-top: 48px;
   border: 1px solid;
 
   ${TagContainer} {
@@ -18,10 +17,14 @@ export const AvaliacaoEstrela = styled.div`
   align-items: center;
   width: 100%;
 `
+export const Imagem = styled.img`
+  width: 100%;
+  padding: 8px;
+`
 
 export const Titulo = styled.h3`
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   display: block;
 `
 

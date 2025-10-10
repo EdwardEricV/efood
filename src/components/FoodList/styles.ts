@@ -6,13 +6,14 @@ import { Card } from '../Product/styles'
 
 export const Container = styled.section`
   background-color: ${cores.brancaFundo};
-  padding: 32px 0;
+  color: ${cores.salmaoClaro};
+  padding: 56px 0;
 `
 
 export const List = styled.ul`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 80px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
   margin-bottom: 118px;
 `
 

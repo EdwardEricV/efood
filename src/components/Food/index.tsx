@@ -1,6 +1,6 @@
 import Tag from '../Tag'
 
-import Button from '../Button'
+import BuyButton from '../BuyButton'
 import {
   Card,
   Titulo,
@@ -9,10 +9,9 @@ import {
   Espacamento,
   Botao,
   AvaliacaoEstrela,
-  Avaliacao
+  Avaliacao,
+  Imagem
 } from './styles'
-
-import estrela from '../../assets/images/estrela.png'
 
 type Props = {
   title: string
@@ -23,7 +22,7 @@ type Props = {
   image: string
 }
 
-const Product = ({
+const Food = ({
   title,
   category,
   system,
@@ -32,7 +31,7 @@ const Product = ({
   image
 }: Props) => (
   <Card>
-    <img src={image} alt={title} />
+    <Imagem src={image} alt={title} />
     <Infos>
       {infos.map((info) => (
         <Tag key={info}>{info}</Tag>
@@ -43,19 +42,18 @@ const Product = ({
         <Titulo>{title}</Titulo>
         <Avaliacao>
           <Titulo>{category}</Titulo>
-          <img src={estrela} alt="estrela" width="16" height="16" />
         </Avaliacao>
       </AvaliacaoEstrela>
       <Descricao>{description}</Descricao>
-      <Button
+      <BuyButton
         type="link"
         to="/Produtos"
         title="Clique aqui para aproveitar esta oferta"
       >
-        Saiba mais
-      </Button>
+        Adicionar ao carrinho
+      </BuyButton>
     </Espacamento>
   </Card>
 )
 
-export default Product
+export default Food

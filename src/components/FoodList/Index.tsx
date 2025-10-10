@@ -1,5 +1,5 @@
 import Game from '../../models/Game'
-import Product from '../Product'
+import Food from '../Food'
 import { Container, List } from './styles'
 
 export type Props = {
@@ -8,12 +8,12 @@ export type Props = {
   games: Game[]
 }
 
-const ProductsList = ({ background, title, games }: Props) => (
+const FoodList = ({ background, title, games }: Props) => (
   <Container>
     <div className="container">
       <List>
         {games.map((game) => (
-          <Product
+          <Food
             key={game.id}
             category={game.category}
             description={game.description}
@@ -28,4 +28,4 @@ const ProductsList = ({ background, title, games }: Props) => (
   </Container>
 )
 
-export default ProductsList
+export default FoodList

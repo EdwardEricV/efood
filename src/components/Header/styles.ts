@@ -8,7 +8,6 @@ export const ImagemHeader = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 80px;
 `
 export const LogoEFOOD = styled.img`
   max-width: 100%;

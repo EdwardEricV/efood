@@ -22,3 +22,22 @@ export const ButtonLink = styled(Link)`
   text-decoration: none;
   border-radius: 8px;
 `
+
+export const Botao = styled.button`
+  font-weight: bold;
+  font-size: 14px;
+  color: ${cores.brancaFundo};
+  padding: 4px 6px;
+  background-color: ${cores.salmao};
+  border: none;
+`
+
+export const BotaoLink = styled(Link)`
+  font-weight: bold;
+  font-size: 14px;
+  color: ${cores.brancaFundo};
+  padding: 4px 6px;
+  background-color: ${cores.salmao};
+  border: none;
+  text-decoration: none;
+`
