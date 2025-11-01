@@ -1,40 +1,53 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
-export const ImagemHeader = styled.div`
+export const Image = styled.div`
   width: 100%;
   height: 186px;
   display: flex;
   align-items: center;
-  justify-content: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  padding: 0 32px;
-`
-export const LogoEFOOD = styled.img`
-  max-width: 100%;
-  height: auto;
 `
 
-export const Subtitulo = styled.h2`
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
+export const Text = styled.h3`
+  font-size: 18px;
+  font-weight: 900;
+  color: ${colors.pink};
+`
+
+export const Banner = styled.div`
+  width: 100%;
+  height: 280px;
+  color: ${colors.white};
+  background-repeat: no-repeat;
+  background-size: cover;
+`
+
+export const TextBanner = styled.p`
+  padding-top: 25px;
+  font-size: 32px;
+  font-weight: 100;
+  padding-bottom: 152px;
+`
+
+export const RestaurantName = styled.p`
+  font-size: 32px;
+  font-weight: 900;
+  width: 672px;
+`
+export const Cart = styled.h3`
+  cursor: pointer;
   font-weight: 900;
   font-size: 18px;
-`
-
-export const Teste = styled.div`
-  max-width: 1024px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  justify-items: center;
-
-  h2:first-child {
-    justify-self: start;
-  }
-
-  h2:last-child {
-    justify-self: end;
+  color: ${colors.pink};
+  &:hover {
+    text-decoration: underline;
   }
 `

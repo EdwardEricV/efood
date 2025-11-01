@@ -1,26 +1,9 @@
-import { Botao, BotaoLink, ButtonContainer, ButtonLink } from './styles'
+import { Buttons } from './styles'
 
-type Props = {
-  type: 'button' | 'link'
-  title: string
-  to?: string
-  onClick?: () => void
-  children: string
+type ButtonProps = {
+  children: React.ReactNode
 }
 
-const Button = ({ type, title, to, onClick, children }: Props) => {
-  if (type === 'button') {
-    return (
-      <Botao type="button" title={title} onClick={onClick}>
-        {children}
-      </Botao>
-    )
-  }
+const Button = ({ children }: ButtonProps) => <Buttons>{children}</Buttons>
 
-  return (
-    <BotaoLink to={to as string} title={title}>
-      {children}
-    </BotaoLink>
-  )
-}
 export default Button

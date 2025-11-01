@@ -1,11 +1,14 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
-export const Container = styled.footer`
-  background-color: ${cores.salmaoClaro};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+export const ContainerFooter = styled.section`
+  background-color: ${colors.offWhite};
+`
+
+export const Logo = styled.img`
+  display: block;
+  margin: 0 auto;
+  padding-top: 40px;
 `
 
 export const ListLogos = styled.ul`
@@ -13,15 +16,14 @@ export const ListLogos = styled.ul`
   list-style: none;
   justify-content: center;
   padding-top: 32px;
-  gap: 16px;
-`
-export const LogoEFOOD = styled.img`
-  max-width: 100%;
-  height: auto;
-  padding-top: 40px;
+
+  #twitter {
+    margin: 0 8px;
+  }
 `
 
 export const TextFooter = styled.p`
+  color: ${colors.pink};
   font-size: 10px;
   width: 480px;
   text-align: center;

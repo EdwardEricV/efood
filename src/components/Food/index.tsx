@@ -1,59 +1,53 @@
-import Tag from '../Tag'
+import { useState } from 'react'
+import ItemCart from '../ItemCart'
 
-import BuyButton from '../BuyButton'
-import {
-  Card,
-  Titulo,
-  Descricao,
-  Infos,
-  Espacamento,
-  Botao,
-  AvaliacaoEstrela,
-  Avaliacao,
-  Imagem
-} from './styles'
+import * as S from './styles'
 
-type Props = {
-  title: string
-  category: string
-  system: string[]
-  description: string
-  infos: string[]
-  image: string
+type FoodProps = {
+  foto: string
+  nome: string
+  descricao: string
+  preco: number
+  porcao: string
+  id: number
 }
 
-const Food = ({
-  title,
-  category,
-  system,
-  description,
-  infos,
-  image
-}: Props) => (
-  <Card>
-    <Imagem src={image} alt={title} />
-    <Infos>
-      {infos.map((info) => (
-        <Tag key={info}>{info}</Tag>
-      ))}
-    </Infos>
-    <Espacamento>
-      <AvaliacaoEstrela>
-        <Titulo>{title}</Titulo>
-        <Avaliacao>
-          <Titulo>{category}</Titulo>
-        </Avaliacao>
-      </AvaliacaoEstrela>
-      <Descricao>{description}</Descricao>
-      <BuyButton
-        type="link"
-        to="/Produtos"
-        title="Clique aqui para aproveitar esta oferta"
-      >
-        Adicionar ao carrinho
-      </BuyButton>
-    </Espacamento>
-  </Card>
-)
+export default function Food({
+  foto,
+  descricao,
+  nome,
+  preco,
+  porcao,
+  id
+}: FoodProps) {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
 
-export default Food
+  const limitarDescricao = (descricao: string) => {
+    return descricao.length > 150 ? descricao.slice(0, 150) + '...' : descricao
+  }
+
+  return (
+    <S.ContainerFood>
+      <S.ImagemFood src={foto} />
+      <div>
+        <S.TitleFood>{nome}</S.TitleFood>
+        <S.DescriptionFood>{limitarDescricao(descricao)}</S.DescriptionFood>
+        <S.StyledButton onClick={() => setModalIsOpen(true)}>
+          Adicionar ao carrinho{' '}
+        </S.StyledButton>
+      </div>
+      {modalIsOpen && (
+        <ItemCart
+          photo={foto}
+          name={nome}
+          description={descricao}
+          portion={porcao}
+          price={preco}
+          id={id}
+          isOpen={modalIsOpen}
+          onClose={() => setModalIsOpen(false)}
+        />
+      )}
+    </S.ContainerFood>
+  )
+}

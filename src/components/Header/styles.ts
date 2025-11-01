@@ -1,25 +1,34 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
-export const ImagemHeader = styled.div`
-  width: 100%;
-  height: 384px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
-export const LogoEFOOD = styled.img`
-  max-width: 100%;
-  height: auto;
-`
+export const HeaderContainer = styled.div`
+  height: 380px;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-weight: bold;
 
-export const Subtitulo = styled.h2`
-  margin-top: 138px;
-  color: ${cores.salmao};
-  max-width: 550px;
+  @media (max-width: 768px) {
+    height: 300px;
+  }
+`
+export const Logo = styled.div`
   text-align: center;
+  padding-top: 60px;
+
+  @media (max-width: 768px) {
+    padding-top: 40px;
+  }
+`
+export const TextHeader = styled.p`
   font-weight: bold;
   font-size: 36px;
   line-height: 100%;
+  color: ${colors.pink};
+  margin-top: 138px;
+  text-align: center;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  word-break: keep-all;
 `

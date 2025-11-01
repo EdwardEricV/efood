@@ -1,32 +1,35 @@
-import { Container, ListLogos, TextFooter, LogoEFOOD } from './styles'
+import * as S from './styles'
 import logo from '../../assets/images/logo.svg'
 import facebook from '../../assets/images/facebook.png'
 import instagram from '../../assets/images/instagram.png'
 import twitter from '../../assets/images/twitter.png'
 
-const currentYear = new Date().getFullYear()
-
 const Footer = () => (
-  <Container>
-    <LogoEFOOD src={logo} alt="EFOOD" />
-    <ListLogos>
+  <S.ContainerFooter>
+    <S.Logo src={logo} alt="Efood" />
+    <S.ListLogos>
       <li>
-        <img src={instagram} alt="instagram" />
+        <a href="#">
+          <img src={instagram} alt="Instagram" />
+        </a>
+      </li>
+      <li id="twitter">
+        <a href="#">
+          <img src={twitter} alt="twitter" />
+        </a>
       </li>
       <li>
-        <img src={facebook} alt="facebook" />
+        <a href="#">
+          <img src={facebook} alt="facebook" />
+        </a>
       </li>
-      <li>
-        <img src={twitter} alt="twitter" />
-      </li>
-    </ListLogos>
-    <TextFooter>
-      {' '}
+    </S.ListLogos>
+    <S.TextFooter>
       A efood é uma plataforma para divulgação de estabelecimentos, a
       responsabilidade pela entrega, qualidade dos produtos é toda do
-      estabelecimento contratado.{' '}
-    </TextFooter>
-  </Container>
+      estabelecimento contratado.
+    </S.TextFooter>
+  </S.ContainerFooter>
 )
 
 export default Footer

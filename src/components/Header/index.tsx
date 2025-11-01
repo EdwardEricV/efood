@@ -1,20 +1,19 @@
 import { Link } from 'react-router-dom'
-import { ImagemHeader, Subtitulo, LogoEFOOD } from './styles'
-
+import * as S from './styles'
+import fundoHeader from '../../assets/images/Vector.png'
 import logo from '../../assets/images/logo.svg'
-import HeaderImg from '../../assets/images/Vector.png'
 
-const Header = () => (
-  <>
-    <ImagemHeader style={{ backgroundImage: `url(${HeaderImg})` }}>
-      <Link to="/">
-        <LogoEFOOD src={logo} alt="EFOOD" />
-      </Link>
-      <Subtitulo>
+export default function Header() {
+  return (
+    <S.HeaderContainer style={{ backgroundImage: `url(${fundoHeader})` }}>
+      <S.Logo>
+        <Link to={'/'}>
+          <img src={logo} alt="Logo da Efood" />
+        </Link>
+      </S.Logo>
+      <S.TextHeader>
         Viva experiências gastronômicas no conforto da sua casa
-      </Subtitulo>
-    </ImagemHeader>
-  </>
-)
-
-export default Header
+      </S.TextHeader>
+    </S.HeaderContainer>
+  )
+}

@@ -1,83 +1,46 @@
-import ProductsList from '../../components/ProductList/Index'
-import Game from '../../models/Game'
-import resident from '../../assets/images/resident.png'
-import pizza from '../../assets/images/pizza.png'
-import estrela from '../../assets/images/estrela.png'
-import Banner from '../../components/Banner'
+import { useEffect, useState } from 'react'
+import Footer from '../../components/Footer'
+import HeaderPerfil from '../../components/HeaderRest'
+import { useParams } from 'react-router-dom'
+import Cart from '../../components/Cart'
+import type { CardapioItem, Restaurants } from '../../pages/Home'
 import FoodList from '../../components/FoodList/Index'
-import HeaderRest from '../../components/HeaderRest'
 
-// Promoções
+const Perfil = () => {
+  const [restaurante, setRestaurante] = useState<Restaurants | null>(null)
+  const { id } = useParams()
 
-const promocoes: Game[] = [
-  {
-    id: 1,
-    category: '',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza,
-    title: 'Pizza Marguerita',
-    infos: [],
-    system: []
-  },
-  {
-    id: 2,
-    category: '',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza,
-    title: 'Pizza Marguerita',
-    infos: [],
-    system: []
-  },
-  {
-    id: 3,
-    category: '',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza,
-    title: 'Pizza Marguerita',
-    infos: [],
-    system: []
-  },
-  {
-    id: 4,
-    category: '',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza,
-    title: 'Pizza Marguerita',
-    infos: [],
-    system: []
-  },
-  {
-    id: 5,
-    category: '',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza,
-    title: 'Pizza Marguerita',
-    infos: [],
-    system: []
-  },
-  {
-    id: 6,
-    category: '',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza,
-    title: 'Pizza Marguerita',
-    infos: [],
-    system: []
-  }
-]
+  useEffect(() => {
+    fetch(`https://api-ebac.vercel.app/api/efood/restaurantes/${id}`)
+      .then((res) => res.json())
+      .then((res) => {
+        const cardapioCorrigido: CardapioItem[] = res.cardapio.map(
+          (item: any) => ({
+            ...item,
+            preco: Number(item.preco)
+          })
+        )
+        setRestaurante({
+          ...res,
+          cardapio: cardapioCorrigido
+        } as Restaurants)
+      })
+  }, [id])
 
-const Produtos = () => (
-  <>
-    <HeaderRest />
-    <Banner />
-    <FoodList games={promocoes} title="RPG" background="gray" />
-  </>
-)
+  return (
+    <>
+      {restaurante && (
+        <HeaderPerfil
+          tipo={restaurante.tipo!}
+          titulo={restaurante.titulo!}
+          capa={restaurante.capa!}
+        />
+      )}
+      <FoodList />
+      <Cart />
+      <Footer />
+    </>
+  )
+}
 
-export default Produtos
+export default Perfil

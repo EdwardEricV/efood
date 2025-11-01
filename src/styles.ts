@@ -1,34 +1,41 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
-export const cores = {
-  branca: '#eeeeee',
-  brancaFundo: '#fff8f2',
-  cardFundo: '#ffffff',
-  preta: '#111',
-  cinza: '#333',
-  cinzaClaro: '#a3a3a3',
-  salmao: '#e66767',
-  salmaoClaro: '#ffebd9',
-  verde: '#10ac84'
+export const colors = {
+  white: '#FFFFFF',
+  pink: '#E66767',
+  offWhite: '#FFEBD9',
+  lightGray: '#FFF8F2',
+  orange: '#ff4500'
 }
 
-export const GlobalCss = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Roboto, sans-serif;
-    list-style: none;
-  }
+export const GlobalStyles = createGlobalStyle`
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:'Roboto', sans-serif;
+    }
 
-  body {
-    background-color: ${cores.branca};
-    color: ${cores.salmao};
-  }
+    body {
+        background-color: ${colors.lightGray}; 
+    }
 
-  .container {
-    max-width: 1024px;
-    width: 100%;
-    margin: 0 auto;
+    .container {
+        max-width: 1024px;
+        width: 100%;
+        margin: 0 auto;
+
+        @media (max-width: 768px) {
+            max-width: 80%;
+        }
+    }
+`
+export const Container = styled.div`
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    max-width: 80%;
   }
 `

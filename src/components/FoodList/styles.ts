@@ -1,23 +1,12 @@
 import styled from 'styled-components'
-
-import { Props } from './Index'
-import { cores } from '../../styles'
-import { Card } from '../Product/styles'
-
-export const Container = styled.section`
-  background-color: ${cores.brancaFundo};
-  color: ${cores.salmaoClaro};
-  padding: 56px 0;
-`
+import { colors } from '../../styles'
 
 export const List = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 32px;
   gap: 32px;
-  margin-bottom: 118px;
-`
-
-export const Title = styled.h2`
-  font-size: 18px;
-  font-weight: bold;
+  padding-top: 56px;
+  color: ${colors.offWhite};
+  padding-bottom: 120px;
 `

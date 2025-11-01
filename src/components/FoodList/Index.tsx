@@ -1,31 +1,50 @@
-import Game from '../../models/Game'
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import type { CardapioItem, Restaurants } from '../../pages/Home'
 import Food from '../Food'
-import { Container, List } from './styles'
+import { List } from './styles'
+import { Container } from '../../styles'
 
-export type Props = {
-  title: string
-  background: 'gray' | 'black'
-  games: Game[]
-}
+export default function FoodList() {
+  const { id } = useParams<{ id: string }>()
+  const [restaurante, setRestaurante] = useState<Restaurants | null>(null)
 
-const FoodList = ({ background, title, games }: Props) => (
-  <Container>
-    <div className="container">
+  useEffect(() => {
+    if (id) {
+      fetch(`https://api-ebac.vercel.app/api/efood/restaurantes/${id}`)
+        .then((resposta) => resposta.json())
+        .then((resposta) => {
+          const cardapioCorrigido: CardapioItem[] = resposta.cardapio.map(
+            (item: any) => ({
+              ...item,
+              preco: Number(item.preco)
+            })
+          )
+          setRestaurante({
+            ...resposta,
+            cardapio: cardapioCorrigido
+          } as Restaurants)
+        })
+    }
+  }, [id])
+
+  if (!restaurante?.cardapio) return null
+
+  return (
+    <Container>
       <List>
-        {games.map((game) => (
+        {restaurante.cardapio.map((item) => (
           <Food
-            key={game.id}
-            category={game.category}
-            description={game.description}
-            image={game.image}
-            infos={game.infos}
-            system={game.system}
-            title={game.title}
+            key={item.id}
+            foto={item.foto}
+            nome={item.nome}
+            descricao={item.descricao}
+            preco={item.preco}
+            porcao={item.porcao}
+            id={item.id}
           />
         ))}
       </List>
-    </div>
-  </Container>
-)
-
-export default FoodList
+    </Container>
+  )
+}
